@@ -1,28 +1,28 @@
 {
   "name": "my-webserver",
   "version": "0.0.1",
-  "description": "[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6754787&assignment_repo_type=AssignmentRepo) # a01 Node",
-  "main": "index.js",
+  "description": "A webserver that takes a port number as an argument. ",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "PORT=\"$(shuf -i 2000-65535 -n 1)\"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl -vI http://localhost:${PORT} && sleep 5s",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/comp426-2022-spring/a01-cpliebe.git"
-  },
-  "author": "Colin Liebe",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/comp426-2022-spring/a01-cpliebe/issues"
-  },
-  "homepage": "https://github.com/comp426-2022-spring/a01-cpliebe#readme",
-  "dependencies": {
-    "minimist": "^1.2.5"
+    "url": "git+https://github.com/comp426-2022-spring/a01-johnmar3.git"
   },
   "keywords": [
     "web",
     "server",
     "node"
-  ]
+  ],
+  "author": "John D. Martin III",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a01-johnmar3/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a01-johnmar3#readme",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
 }
